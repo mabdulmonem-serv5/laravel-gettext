@@ -34,7 +34,7 @@ class TestAdapter implements AdapterInterface
      *
      * @return boolean
      */
-    public function setLocale($locale): bool
+    public function setLocale(string $locale): bool
     {
         $this->locale = $locale;
 

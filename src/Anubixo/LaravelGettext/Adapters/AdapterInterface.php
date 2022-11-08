@@ -17,7 +17,7 @@ interface AdapterInterface
      * @param string $locale
      * @return boolean
      */
-    public function setLocale($locale): bool;
+    public function setLocale(string $locale): bool;
 
     /**
      * Get the application path

@@ -12,7 +12,7 @@ class LaravelAdapter implements AdapterInterface
      * @param string $locale
      * @return bool
      */
-    public function setLocale($locale): bool
+    public function setLocale(string $locale): bool
     {
         App::setLocale(substr($locale, 0, 2));
         return true;

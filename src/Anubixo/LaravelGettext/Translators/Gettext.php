@@ -7,11 +7,9 @@ use Anubixo\LaravelGettext\FileSystem;
 use Anubixo\LaravelGettext\Adapters\AdapterInterface;
 use Anubixo\LaravelGettext\Config\Models\Config;
 use Anubixo\LaravelGettext\Exceptions\LocaleNotSupportedException;
-use Anubixo\LaravelGettext\Exceptions\MissingPhpGettextModuleException;
 use Anubixo\LaravelGettext\Exceptions\UndefinedDomainException;
 
 use Exception;
-use Illuminate\Support\Facades\Session;
 use Anubixo\LaravelGettext\Storages\Storage;
 use RuntimeException;
 
@@ -64,10 +62,14 @@ class Gettext extends BaseTranslator implements TranslatorInterface
 
     /**
      * @throws LocaleNotSupportedException
+     * @throws Exception
      */
-    public function __construct(Config  $config, AdapterInterface $adapter, FileSystem $fileSystem,
-                                Storage $storage)
-    {
+    public function __construct(
+        Config  $config,
+        AdapterInterface $adapter,
+        FileSystem $fileSystem,
+        Storage $storage
+    ) {
         parent::__construct($config, $adapter, $fileSystem, $storage);
 
         // General domain
@@ -103,7 +105,7 @@ class Gettext extends BaseTranslator implements TranslatorInterface
             $gettextLocale = $customLocale . $this->getEncoding();
 
             // Update all categories set in config
-            foreach($this->categories as $category) {
+            foreach ($this->categories as $category) {
                 putenv("$category=$gettextLocale");
                 setlocale(constant($category), $gettextLocale);
             }

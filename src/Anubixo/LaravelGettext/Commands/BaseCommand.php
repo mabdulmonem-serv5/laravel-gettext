@@ -2,6 +2,7 @@
 
 namespace Anubixo\LaravelGettext\Commands;
 
+use Anubixo\LaravelGettext\Config\Models\Config;
 use Anubixo\LaravelGettext\Exceptions\RequiredConfigurationFileException;
 use Anubixo\LaravelGettext\Exceptions\RequiredConfigurationKeyException;
 use Illuminate\Console\Command;
@@ -20,9 +21,9 @@ class BaseCommand extends Command
     /**
      * Package configuration data
      *
-     * @var array
+     * @var Config
      */
-    protected array $configuration;
+    protected Config $configuration;
 
     /**
      * Prepares the package environment for gettext commands
