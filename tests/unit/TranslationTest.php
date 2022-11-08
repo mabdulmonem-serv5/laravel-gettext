@@ -8,12 +8,12 @@
 
 namespace unit;
 
-use Xinax\LaravelGettext\Adapters\LaravelAdapter;
-use Xinax\LaravelGettext\Config\ConfigManager;
-use Xinax\LaravelGettext\FileSystem;
-use Xinax\LaravelGettext\Storages\MemoryStorage;
-use Xinax\LaravelGettext\Testing\BaseTestCase;
-use Xinax\LaravelGettext\Translators\Symfony;
+use Anubixo\LaravelGettext\Adapters\LaravelAdapter;
+use Anubixo\LaravelGettext\Config\ConfigManager;
+use Anubixo\LaravelGettext\FileSystem;
+use Anubixo\LaravelGettext\Storages\MemoryStorage;
+use Anubixo\LaravelGettext\Testing\BaseTestCase;
+use Anubixo\LaravelGettext\Translators\Symfony;
 
 class TranslationTest extends BaseTestCase
 {
@@ -23,7 +23,7 @@ class TranslationTest extends BaseTestCase
      *
      * @var string
      */
-    protected $appPath = __DIR__ . '/../../vendor/laravel/laravel/bootstrap/app.php';
+    protected string $appPath = __DIR__ . '/../../vendor/laravel/laravel/bootstrap/app.php';
     /**
      * @var FileSystem
      */

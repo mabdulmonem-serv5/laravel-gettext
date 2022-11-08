@@ -2,14 +2,14 @@
 
 use \Mockery as m;
 
-use Xinax\LaravelGettext\Adapters\AdapterInterface;
-use Xinax\LaravelGettext\Storages\MemoryStorage;
-use Xinax\LaravelGettext\Testing\Adapter\TestAdapter;
-use Xinax\LaravelGettext\Testing\BaseTestCase;
-use Xinax\LaravelGettext\Config\ConfigManager;
-use Xinax\LaravelGettext\Adapters\LaravelAdapter;
-use Xinax\LaravelGettext\FileSystem;
-use Xinax\LaravelGettext\Translators\Symfony;
+use Anubixo\LaravelGettext\Adapters\AdapterInterface;
+use Anubixo\LaravelGettext\Storages\MemoryStorage;
+use Anubixo\LaravelGettext\Testing\Adapter\TestAdapter;
+use Anubixo\LaravelGettext\Testing\BaseTestCase;
+use Anubixo\LaravelGettext\Config\ConfigManager;
+use Anubixo\LaravelGettext\Adapters\LaravelAdapter;
+use Anubixo\LaravelGettext\FileSystem;
+use Anubixo\LaravelGettext\Translators\Symfony;
 
 class LaravelGettextTest extends BaseTestCase
 {
@@ -18,7 +18,7 @@ class LaravelGettextTest extends BaseTestCase
      *
      * @var string
      */
-    protected $appPath = __DIR__.'/../../vendor/laravel/laravel/bootstrap/app.php';
+    protected string $appPath = __DIR__.'/../../vendor/laravel/laravel/bootstrap/app.php';
 
     /**
      * @var Symfony
@@ -99,7 +99,7 @@ class LaravelGettextTest extends BaseTestCase
     {
         $response = $this->translator->setEncoding('UTF-8');
         $this->assertNotEmpty($response);
-        $this->assertInstanceOf('Xinax\LaravelGettext\Translators\Symfony', $response);
+        $this->assertInstanceOf('Anubixo\LaravelGettext\Translators\Symfony', $response);
     }
 
     protected function tearDown(): void

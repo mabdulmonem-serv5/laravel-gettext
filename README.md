@@ -56,7 +56,7 @@ You also need to register the LaravelGettext middleware in the ```app/Http/Kerne
     protected $middlewareGroups = [
         'web' => [
             // ...
-            \Xinax\LaravelGettext\Middleware\GettextMiddleware::class,
+            \Anubixo\LaravelGettext\Middleware\GettextMiddleware::class,
         ],
         // ...
     ]
@@ -421,7 +421,7 @@ Also, if you're using Symfony as your backend, you can add the `_s` method. It's
      * The "_n" and "ngettext" are plural translation functions
      * The "dgettext" function allows a translation domain to be explicitly specified
      *
-     * "__" and "_n" and "_i" and "_s" are helpers functions @see \Xinax\LaravelGettext\Support\helpers.php
+     * "__" and "_n" and "_i" and "_s" are helpers functions @see \Anubixo\LaravelGettext\Support\helpers.php
      */
     'keywords-list' => ['_', '__', '_i', '_s', 'gettext', '_n:1,2', 'ngettext:1,2', 'dgettext:2'],;
 ```

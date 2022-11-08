@@ -1,7 +1,7 @@
 {
     "name": "zerospam/laravel-gettext",
     "description": "Adds localization support to laravel applications in an easy way using Poedit and GNU gettext.",
-    "homepage": "https://github.com/zerospam/laravel-gettext",
+    "homepage": "https://github.com/anubixo/laravel-gettext",
     "keywords": [
         "gettext",
         "localization",
@@ -12,42 +12,38 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Nicolás Daniel Palumbo",
-            "email": "n@xinax.net"
-        },
-        {
-            "name": "Antoine Aflalo",
-            "email": "dev+laravel_gettext@zerospam.ca"
+            "name": "Ahmed AlMoselhy",
+            "email": "ah.almoselhy@gmail.com"
         }
     ],
     "support": {
-        "issues": "https://github.com/zerospam/laravel-gettext/issues"
+        "issues": "https://github.com/anubixo/laravel-gettext/issues"
     },
     "require": {
-        "php": ">=7.2",
-        "laravel/framework": "^6.0 || ^7.0 || ^8.0",
-        "laravel/helpers": "^1.1"
+        "php": ">=8.0",
+        "laravel/framework": "^6.0 || ^7.0 || ^8.0 || ^9.0",
+        "laravel/helpers": "^1.5"
     },
     "require-dev": {
         "mockery/mockery": "dev-master",
         "phpunit/phpunit": "~7.0 || ^8.5 || ^9",
-        "squizlabs/php_codesniffer" : "1.5.*",
-        "laravel/laravel": "^6.0 || ^7.0 || ^8.0",
-        "php-coveralls/php-coveralls": "^2.1"
+        "squizlabs/php_codesniffer" : "^3.7.1",
+        "laravel/laravel": "^6.0 || ^7.0 || ^8.0 || ^9.0",
+        "php-coveralls/php-coveralls": "^2.5.3"
     },
     "autoload": {
         "psr-0": {
-            "Xinax\\LaravelGettext\\": "src/"
+            "Anubixo\\LaravelGettext\\": "src/"
         },
         "files": [
-            "src/Xinax/LaravelGettext/Support/helpers.php"
+            "src/Anubixo/LaravelGettext/Support/helpers.php"
         ]
     },
     "minimum-stability": "stable",
     "extra": {
         "laravel": {
           "providers": [
-            "Xinax\\LaravelGettext\\LaravelGettextServiceProvider"
+            "Anubixo\\LaravelGettext\\LaravelGettextServiceProvider"
           ]
        }
     }

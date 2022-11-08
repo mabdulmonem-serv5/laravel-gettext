@@ -131,7 +131,7 @@ return array(
     /**
      * The adapter used to sync the laravel built-in locale
      */
-    'adapter' => \Xinax\LaravelGettext\Testing\Adapter\TestAdapter::class,
+    'adapter' => \Anubixo\LaravelGettext\Testing\Adapter\TestAdapter::class,
 
     /**
      * Where to store the current locale/domain
@@ -139,7 +139,7 @@ return array(
      * By default, in the session.
      * Can be changed for only memory or your own storage mechanism
      *
-     * @see \Xinax\LaravelGettext\Storages\Storage
+     * @see \Anubixo\LaravelGettext\Storages\Storage
      */
-    'storage' => \Xinax\LaravelGettext\Storages\SessionStorage::class,
+    'storage' => \Anubixo\LaravelGettext\Storages\SessionStorage::class,
 );

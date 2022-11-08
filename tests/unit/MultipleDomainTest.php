@@ -2,11 +2,11 @@
 
 use \Mockery as m;
 
-use Xinax\LaravelGettext\Testing\BaseTestCase;
-use Xinax\LaravelGettext\Config\ConfigManager;
-use Xinax\LaravelGettext\Adapters\LaravelAdapter;
-use Xinax\LaravelGettext\FileSystem;
-use Xinax\LaravelGettext\Translators\Symfony;
+use Anubixo\LaravelGettext\Testing\BaseTestCase;
+use Anubixo\LaravelGettext\Config\ConfigManager;
+use Anubixo\LaravelGettext\Adapters\LaravelAdapter;
+use Anubixo\LaravelGettext\FileSystem;
+use Anubixo\LaravelGettext\Translators\Symfony;
 
 /**
  * Created by PhpStorm.
@@ -21,7 +21,7 @@ class MultipleDomainTest extends BaseTestCase
      *
      * @var string
      */
-    protected $appPath = __DIR__.'/../../vendor/laravel/laravel/bootstrap/app.php';
+    protected string $appPath = __DIR__.'/../../vendor/laravel/laravel/bootstrap/app.php';
 
     /**
      * FileSystem helper
