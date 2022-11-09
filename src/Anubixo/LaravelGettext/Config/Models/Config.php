@@ -95,7 +95,7 @@ class Config
      *
      * @var string
      */
-    protected string $adapter;
+    protected string $adapter = '\Anubixo\LaravelGettext\Adapters\LaravelAdapter';
 
 
     /**
