@@ -22,13 +22,13 @@ return [
      * Default locale: this will be the default for your application.
      * Is to be supposed that all strings are written in this language.
      */
-    'locale' => 'en_US',
+    'locale' => 'en',
 
     /**
      * Supported locales: An array containing all allowed languages
      */
     'supported-locales' => [
-        'en_US',
+        'en',
     ],
 
     /**
@@ -63,7 +63,7 @@ return [
     /**
      * Fallback locale: When default locale is not available
      */
-    'fallback-locale' => 'en_US',
+    'fallback-locale' => 'en',
 
     /**
      * Default domain used for translations: It is the file name for .po and .mo files
@@ -88,7 +88,7 @@ return [
      */
     'source-paths' => [
         'Http',
-        'resources/views',
+        '../resources/views',
         'Console',
     ],
 
