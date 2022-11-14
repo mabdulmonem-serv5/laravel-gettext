@@ -14,7 +14,7 @@ class LaravelGettext
      *
      * @var TranslatorInterface $translator
      */
-    protected TranslatorInterface $translator;
+    protected static TranslatorInterface $translator;
     private string $encoding;
 
     /**
@@ -22,7 +22,7 @@ class LaravelGettext
      */
     public function __construct(TranslatorInterface $gettext)
     {
-        $this->translator = $gettext;
+        self::$translator = $gettext;
     }
 
     /**
@@ -32,7 +32,7 @@ class LaravelGettext
      */
     public function getEncoding(): string
     {
-        return $this->translator->getEncoding();
+        return self::$translator->getEncoding();
     }
 
     /**
@@ -52,9 +52,12 @@ class LaravelGettext
      *
      * @return string
      */
-    public function getLocale(): string
+    public static function getLocale(): string
     {
-        return $this->translator->getLocale();
+        if (isset(self::$translator))
+            return self::$translator->getLocale();
+
+        return app()->getLocale();
     }
 
     /**
@@ -67,7 +70,9 @@ class LaravelGettext
     public function setLocale(string $locale): static
     {
         if ($locale != $this->getLocale()) {
-            $this->translator->setLocale($locale);
+            if (isset(self::$translator)) {
+                self::$translator->setLocale($locale);
+            }
         }
 
         return $this;
@@ -115,7 +120,7 @@ class LaravelGettext
      */
     public function setDomain(string $domain): static
     {
-        $this->translator->setDomain($domain);
+        self::$translator->setDomain($domain);
         return $this;
     }
 
@@ -126,7 +131,7 @@ class LaravelGettext
      */
     public function getDomain(): string
     {
-        return $this->translator->getDomain();
+        return self::$translator->getDomain();
     }
 
     /**
@@ -137,7 +142,7 @@ class LaravelGettext
      */
     public function translate($message): string
     {
-        return $this->translator->translate($message);
+        return self::$translator->translate($message);
     }
 
     /**
@@ -150,7 +155,7 @@ class LaravelGettext
      */
     public function translatePlural($singular, $plural, $count): string
     {
-        return $this->translator->translatePlural($singular, $plural, $count);
+        return self::$translator->translatePlural($singular, $plural, $count);
     }
 
     /**
@@ -160,7 +165,7 @@ class LaravelGettext
      */
     public function getTranslator(): TranslatorInterface
     {
-        return $this->translator;
+        return self::$translator;
     }
 
     /**
@@ -171,7 +176,7 @@ class LaravelGettext
      */
     public function setTranslator(TranslatorInterface $translator): static
     {
-        $this->translator = $translator;
+        self::$translator = $translator;
         return $this;
     }
 
@@ -182,7 +187,7 @@ class LaravelGettext
      */
     public function getSupportedLocales(): array
     {
-        return $this->translator->supportedLocales();
+        return self::$translator->supportedLocales();
     }
 
     /**
@@ -193,6 +198,6 @@ class LaravelGettext
      */
     public function isLocaleSupported($locale): bool
     {
-        return $this->translator->isLocaleSupported($locale);
+        return self::$translator->isLocaleSupported($locale);
     }
 }
