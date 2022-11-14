@@ -37,6 +37,7 @@ interface TranslatorInterface
      * Returns a boolean that indicates if $locale
      * is supported by configuration
      *
+     * @param $locale
      * @return boolean
      */
     public function isLocaleSupported($locale): bool;
